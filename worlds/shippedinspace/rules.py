@@ -30,14 +30,11 @@ def set_all_entrance_rules(world: ShippedInSpaceWorld) -> None:
     # our function needs to be locally defined so that it has access to the player number from the outer scope.
 
 
-    # Now we can set our "can_pass_level10" rule to our entrance which requires passing level 10 to clear the path.
-    # One way to set rules is via the set_rule() function, which works on both Entrances and Locations.
+
     set_rule(space_to_space10, lambda state: state.has("level10Key", world.player))
 
-    # Because the function has to be defined locally, most worlds prefer the lambda syntax.
     set_rule(space10_to_space20, lambda state: state.has("level20Key", world.player))
 
-    # Conditions can depend on event items.
     set_rule(space20_to_space30, lambda state: state.has("level30Key", world.player))
 
 def set_all_rules(world: ShippedInSpaceWorld) -> None:
