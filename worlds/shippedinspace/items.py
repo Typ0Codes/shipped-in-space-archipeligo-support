@@ -16,6 +16,9 @@ ITEM_NAME_TO_ID = {
     "Shield": 3,
     "Gun": 4,
     "Winstate": 5,
+    "level10Key": 6,
+    "level20Key": 7,
+    "level30Key": 8
 }
 
 # Items should have a defined default classification.
@@ -26,6 +29,9 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Shield": ItemClassification.filler,
     "Gun": ItemClassification.useful,
     "Winstate": ItemClassification.progression,
+    "level10Key": ItemClassification.progression,
+    "level20Key": ItemClassification.progression,
+    "level30Key": ItemClassification.progression
 }
 
 
@@ -91,6 +97,9 @@ def create_all_items(world: ShippedInSpaceWorld) -> None:
         world.create_item("Gun"),
         world.create_item("Gun"),
         world.create_item("Gun"),
+        world.create_item("level10Key"),
+        world.create_item("level20Key"),
+        world.create_item("level30Key"),
     ]
 
     # Some items may only exist if the player enables certain options.

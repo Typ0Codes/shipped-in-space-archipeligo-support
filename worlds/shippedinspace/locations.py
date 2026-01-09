@@ -83,6 +83,12 @@ def create_regular_locations(world: ShippedInSpaceWorld) -> None:
     # Once again, before we do anything, we can grab our regions we created by using world.get_region()
     space = world.get_region("Space")
     lvl40 = world.get_region("Level 40")
+
+    space10 = world.get_region("Space 10-20")
+
+    space20 = world.get_region("Space 20-30")
+
+    space30 = world.get_region("Space 30-40")
     
     
     
@@ -92,7 +98,19 @@ def create_regular_locations(world: ShippedInSpaceWorld) -> None:
     # Aha! So that's why we made that "get_location_names_with_ids" helper method earlier.
     # You also need to pass your overridden Location class.
     space_locations = get_location_names_with_ids(
-        ["somewhere in space 1","somewhere in space 2","somewhere in space 3","somewhere in space 4","somewhere in space 5","somewhere in space 6","somewhere in space 7","somewhere in space 8","somewhere in space 9","somewhere in space 10","somewhere in space 11","somewhere in space 12","somewhere in space 13","somewhere in space 14","somewhere in space 15","somewhere in space 16","somewhere in space 17","somewhere in space 18","somewhere in space 19","somewhere in space 20","somewhere in space 21","somewhere in space 22","somewhere in space 23","somewhere in space 24","somewhere in space 25","somewhere in space 26","somewhere in space 27","somewhere in space 28","somewhere in space 29","somewhere in space 30","somewhere in space 31","somewhere in space 32","somewhere in space 33","somewhere in space 34","somewhere in space 35","somewhere in space 36","somewhere in space 37","somewhere in space 38","somewhere in space 39","somewhere in space 40"]
+        ["somewhere in space 1","somewhere in space 2","somewhere in space 3","somewhere in space 4","somewhere in space 5","somewhere in space 6","somewhere in space 7","somewhere in space 8","somewhere in space 9","somewhere in space 10"]
+    )
+
+    space10_locations = get_location_names_with_ids(
+        ["somewhere in space 11","somewhere in space 12","somewhere in space 13","somewhere in space 14","somewhere in space 15","somewhere in space 16","somewhere in space 17","somewhere in space 18","somewhere in space 19","somewhere in space 20"]
+    )
+
+    space20_locations = get_location_names_with_ids(
+        ["somewhere in space 21","somewhere in space 22","somewhere in space 23","somewhere in space 24","somewhere in space 25","somewhere in space 26","somewhere in space 27","somewhere in space 28","somewhere in space 29","somewhere in space 30"]
+    )
+
+    space30_locations = get_location_names_with_ids(
+        ["somewhere in space 31","somewhere in space 32","somewhere in space 33","somewhere in space 34","somewhere in space 35","somewhere in space 36","somewhere in space 37","somewhere in space 38","somewhere in space 39","somewhere in space 40"]
     )
 
     lvl40_locations = get_location_names_with_ids(
@@ -103,6 +121,11 @@ def create_regular_locations(world: ShippedInSpaceWorld) -> None:
 
     lvl40.add_locations(lvl40_locations,ShippedInSpaceLocation)
 
+    space10.add_locations(space10_locations, ShippedInSpaceLocation)
+
+    space20.add_locations(space20_locations, ShippedInSpaceLocation)
+
+    space30.add_locations(space30_locations, ShippedInSpaceLocation)    
     
 
 def create_events(world: ShippedInSpaceWorld) -> None:

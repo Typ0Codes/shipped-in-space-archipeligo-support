@@ -25,10 +25,13 @@ def create_and_connect_regions(world: ShippedInSpaceWorld) -> None:
 def create_all_regions(world: ShippedInSpaceWorld) -> None:
     # Creating a region is as simple as calling the constructor of the Region class.
     space = Region("Space", world.player, world.multiworld)
+    space10 = Region("Space 10-20", world.player, world.multiworld)
+    space20 = Region("Space 20-30", world.player, world.multiworld)
+    space30 = Region("Space 30-40", world.player, world.multiworld)
     lvl40 = Region("Level 40", world.player, world.multiworld)
 
     # Let's put all these regions in a list.
-    regions = [space,lvl40]
+    regions = [space,lvl40,space10,space20,space30]
 
     # Some regions may only exist if the player enables certain options.
     # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
@@ -46,7 +49,17 @@ def connect_regions(world: ShippedInSpaceWorld) -> None:
 
     lvl40 = world.get_region("Level 40")
 
-    space.connect(lvl40, "space to Lvl40")
+    space10 = world.get_region("Space 10-20")
+
+    space20 = world.get_region("Space 20-30")
+
+    space30 = world.get_region("Space 30-40")
+
+    space.connect(space10, "space to space10")
+    space10.connect(space20, "space10 to space20")
+    space20.connect(space30, "space20 to space30")
+
+    space30.connect(lvl40, "space to Lvl40")
 
 
     
