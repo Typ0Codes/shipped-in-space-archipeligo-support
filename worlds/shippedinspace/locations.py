@@ -52,8 +52,7 @@ LOCATION_NAME_TO_ID = {
     "somewhere in space 37": 37,
     "somewhere in space 38": 38,
     "somewhere in space 39": 39,
-    "somewhere in space 40": 40,
-    "win": 41
+    "somewhere in space 40": 40
 }
 
 
@@ -113,13 +112,11 @@ def create_regular_locations(world: ShippedInSpaceWorld) -> None:
         ["somewhere in space 31","somewhere in space 32","somewhere in space 33","somewhere in space 34","somewhere in space 35","somewhere in space 36","somewhere in space 37","somewhere in space 38","somewhere in space 39","somewhere in space 40"]
     )
 
-    lvl40_locations = get_location_names_with_ids(
-        ["win"]
-    )
+    
 
     space.add_locations(space_locations, ShippedInSpaceLocation)
 
-    lvl40.add_locations(lvl40_locations,ShippedInSpaceLocation)
+    
 
     space10.add_locations(space10_locations, ShippedInSpaceLocation)
 
@@ -129,16 +126,13 @@ def create_regular_locations(world: ShippedInSpaceWorld) -> None:
     
 
 def create_events(world: ShippedInSpaceWorld) -> None:
-
     lvl40 = world.get_region("Level 40")
 
     lvl40.add_event(
-        "won", "Victory", location_type=ShippedInSpaceLocation, item_type=items.ShippedInSpaceItem
+        "Victory",
+        "Victory",
+        location_type=ShippedInSpaceLocation,
+        item_type=items.ShippedInSpaceItem,
     )
 
 
-def place_locked_items(world: ShippedInSpaceWorld) -> None:
-
-    Lvl40 = world.get_location("win")
-
-    Lvl40.place_locked_item(world.create_item("Winstate"))

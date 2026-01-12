@@ -18,6 +18,7 @@ def set_all_entrance_rules(world: ShippedInSpaceWorld) -> None:
     space_to_space10 = world.get_entrance("space to space10")
     space10_to_space20 = world.get_entrance("space10 to space20")
     space20_to_space30 = world.get_entrance("space20 to space30")
+    space30_to_lvl40 = world.get_entrance("space to Lvl40")
 
     # An access rule is a function. We can define this function like any other function.
     # This function must accept exactly one parameter: A "CollectionState".
@@ -37,6 +38,10 @@ def set_all_entrance_rules(world: ShippedInSpaceWorld) -> None:
 
     set_rule(space20_to_space30, lambda state: state.has("level30Key", world.player))
 
+    
+
+    
+
 def set_all_rules(world: ShippedInSpaceWorld) -> None:
     # In order for AP to generate an item layout that is actually possible for the player to complete,
     # we need to define rules for our Entrances and Locations.
@@ -50,6 +55,4 @@ def set_all_rules(world: ShippedInSpaceWorld) -> None:
 def set_completion_condition(world: ShippedInSpaceWorld) -> None:
 
 
-    # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
-    # So lets undo what we just did, and instead set the completion condition to:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Winstate", world.player)
+    world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)

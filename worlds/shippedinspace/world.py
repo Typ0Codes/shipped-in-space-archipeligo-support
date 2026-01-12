@@ -51,11 +51,11 @@ class ShippedInSpaceWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_all_locations(self)
-
+        locations.create_events(self)
 
     def create_items(self) -> None:
         items.create_all_items(self)
-        locations.place_locked_items(self)
+
 
     # Our world class must also have a create_item function that can create any one of our items by name at any time.
     # We also put this in a different file, the same one that create_items is in.
